@@ -85,3 +85,41 @@
             right:-20px;
             opacity:0.8;
         }
+
+ /* required fields during signup  ---------------------------------------------------------*/
+
+.form-control {
+    padding-right: 30px;
+}
+
+.form-control + .glyphicon {
+    position: absolute;
+    right: 0;
+    padding: 12px 27px;
+    color: red;
+}
+
+.under
+{
+position:absolute;
+left:0px;
+top:0px;
+z-index:98;
+}
+
+.over
+{
+position: float: right;;
+left:20px;
+top:0px;
+z-index:100;
+}
+
+.label-default-name {
+
+    display: inline-flex;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #5a356d;
+}

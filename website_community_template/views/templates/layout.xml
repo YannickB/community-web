@@ -5,7 +5,7 @@
             <xpath expr="//header" position="replace">
                 <t t-if="not hide_header">
                     <header>
-                        <nav class="navbar navbar-default mb0" role="navigation">
+                       <nav class="navbar navbar-default mb0" role="navigation">
                             <div class="container">
                                 <div class="col-md-12">
                                     <div class="row">
@@ -37,12 +37,13 @@
                                                 <li class="hidden"><a href="/page/website.contactus" class="btn-nolink"><span class="weezer-icon weezer-envelope"></span></a></li>
                                                 <li t-ignore="true" t-if="website.user_id == user_id">
                                                     <a href="/web/login">
-                                                        <span class="weezer-icon weezer-profile field-tip"><span class="tip-content">My account</span></span>
+                                                        <span class="weezer-icon weezer-profile field-tip"><span class="tip-content" style="z-index:2;">My account</span></span>
                                                     </a>
                                                 </li>
                                                 <li class="dropdown" t-ignore="true" t-if="website.user_id != user_id">
                                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                        <span class="weezer-icon weezer-profile field-tip"><span class="tip-content">My account</span></span>
+                                                        <span class="weezer-icon weezer-profile field-tip"><span class="tip-content" style="z-index:2;">My account</span></span>
+                                                        <span t-esc="(len(user_id.name)&gt;5) and (user_id.name[:5]+'...') or user_id.name" class="label label-default" style="position:absolute;left:20px;top:2px;z-index:4;"/>
                                                     </a>
                                                     <ul class="dropdown-menu js_usermenu" role="menu">
                                                         <li><a href="/marketplace/profile" role="menuitem">My Profile</a></li>
@@ -50,9 +51,7 @@
                                                         <li><a t-attf-href="/web/session/logout?redirect=/" role="menuitem">Logout</a></li>
                                                     </ul>
                                                 </li>
-                                                <li>
                                                 <!-- email ici -->
-                                                </li>
                                             </ul>
                                         </div>
                                         <!-- /.navbar-collapse -->

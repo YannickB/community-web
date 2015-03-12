@@ -24,26 +24,22 @@
                                         <div class="col-md-6">
                                             <input type="search" name="name" class="form-control" placeholder="Search" t-att-value="request.httprequest.args.get('name','')"/>
                                         </div>
-                                        <!-- python code to get categories -->
-                                        <t t-set="ann_categories_obj" t-value="request.registry['marketplace.announcement.category']"/>
-                                        <t t-set="ann_categories" t-value="ann_categories_obj.name_search(request.cr, request.uid, '', [], context=request.context)"/>
-                                        <div class="col-md-3">
-                                            <select name="category" class="selectpicker form-control" placeholder="Category" style="display: none;" >
-                                                <option value="0" t-att-selected="'selected' if not int(request.httprequest.args.get('category',0)) else None">All</option>
-                                                <t t-foreach="ann_categories or []" t-as="c">
-                                                    <option t-att-value="c[0]" t-att-selected="'selected' if int(request.httprequest.args.get('category',0)) == c[0] else None"><t t-esc="c[1]"/></option>
-                                                </t>
-                                            </select>
-                                        </div>
 
+                                        <div class="col-md-1">
+                                        <button class="btn btn-primary pull-right" type="submit"><span class="fa fa-search"></span></button>
+                                        </div>
+                                        <div class="col-md-1"><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#filter">
+                                        <span class="glyphicon glyphicon-cog"></span> Advanced</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+<!-- collapse ******************** -->
+
                         <!-- filters -->
                         <div class="container">
-                            <div class="row">
+                            <div class="well collapse row"  id="filter">
                                 <div class="col-md-12">
                                     <div class="form-group">
 
@@ -56,6 +52,18 @@
                                         </div>
 
                                         <div class="col-md-2">
+                                            <!-- python code to get categories -->
+                                        <t t-set="ann_categories_obj" t-value="request.registry['marketplace.announcement.category']"/>
+                                        <t t-set="ann_categories" t-value="ann_categories_obj.name_search(request.cr, request.uid, '', [], context=request.context)"/>
+                                            <label class="control-label">Category</label>
+                                            <label class="sr-only">Category</label>
+                                            <select name="category" class="selectpicker form-control" placeholder="Category" style="display: none;" >
+                                                <option value="0" t-att-selected="'selected' if not int(request.httprequest.args.get('category',0)) else None">All</option>
+                                                <t t-foreach="ann_categories or []" t-as="c">
+                                                    <option t-att-value="c[0]" t-att-selected="'selected' if int(request.httprequest.args.get('category',0)) == c[0] else None"><t t-esc="c[1]"/></option>
+                                                </t>
+                                            </select>
+                                        <!-- end of python code to get categories -->
                                             <label class="control-label">Where?</label>
                                             <label class="sr-only">Where?</label>
                                             <input name="city" id="filter-where" type="text" placeholder="Where?" class="form-control" autocomplete="on" t-att-value="request.httprequest.args.get('city','')"/>
@@ -96,16 +104,18 @@
         
                                         </div>
                             
-                                        <div class="col-md-1">
-                                            <label class="control-label"> </label>
-                                            <div class="clearfix"></div>
-                                            <button class="btn btn-primary pull-right" type="submit"><span class="fa fa-search"></span></button>
-                                        </div>
+
 
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
+
+<!-- collapse ******************** -->
+
+
                     </section>
                 </form>
             </section>
