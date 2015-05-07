@@ -93,10 +93,21 @@ msgstr "Catégorie"
 msgid "City"
 msgstr "Ville"
 
+
+#. module: website_marketplace
+#: view:website:website_marketplace.view_announcement
+msgid "Announce status"
+msgstr "Statut annonce"
+
 #. module: website_marketplace
 #: view:website:website_marketplace.view_announcement
 msgid "Close"
-msgstr "Clore"
+msgstr "Archiver"
+
+#. module: website_marketplace
+#: view:website:website_marketplace.view_announcement
+msgid "Closed"
+msgstr "Archivée"
 
 #. module: website_marketplace
 #: view:website:website_marketplace.mp_search
@@ -176,6 +187,11 @@ msgstr "De qui ?"
 #: view:website:website_marketplace.mp_search_form
 msgid "From who?"
 msgstr "De qui ?"
+
+#. module: website_marketplace
+#: view:website:website_marketplace.mp_search_form
+msgid "Advanced"
+msgstr "Filtres"
 
 #. module: website_marketplace
 #: view:website:website_marketplace.edit_announcement

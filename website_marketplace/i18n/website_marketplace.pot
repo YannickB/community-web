@@ -95,6 +95,16 @@ msgstr ""
 
 #. module: website_marketplace
 #: view:website:website_marketplace.view_announcement
+msgid "Announce status"
+msgstr ""
+
+#. module: website_marketplace
+#: view:website:website_marketplace.view_announcement
+msgid "Closed"
+msgstr ""
+
+#. module: website_marketplace
+#: view:website:website_marketplace.view_announcement
 msgid "Close"
 msgstr ""
 
@@ -175,6 +185,11 @@ msgstr ""
 #. module: website_marketplace
 #: view:website:website_marketplace.mp_search_form
 msgid "From who?"
+msgstr ""
+
+#. module: website_marketplace
+#: view:website:website_marketplace.mp_search_form
+msgid "Advanced"
 msgstr ""
 
 #. module: website_marketplace

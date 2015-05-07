@@ -29,7 +29,7 @@
                                         <button class="btn btn-primary pull-right" type="submit"><span class="fa fa-search"></span></button>
                                         </div>
                                         <div class="col-md-1"><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#filter">
-                                        <span class="glyphicon glyphicon-cog"></span> Advanced</button>
+                                        <span class="glyphicon glyphicon-filter"></span> Advanced</button>
                                         </div>
                                     </div>
                                 </div>

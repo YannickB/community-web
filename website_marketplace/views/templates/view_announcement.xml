@@ -114,14 +114,14 @@
                                     <t t-if="announcement.state == 'draft'">
                                         <t t-if="announcement.is_user">
                                             <a t-att-href="'/marketplace/announcement_detail/%s/edit' % announcement.id" class="btn btn-primary" role="button">Edit</a>
-                                            <a t-attf-href="/marketplace/announcement/#{announcement.id}/draft_cancel" class="btn btn-primary" role="button">Cancel</a>
+                                            <!-- <a t-attf-href="/marketplace/announcement/#{announcement.id}/draft_cancel" class="btn btn-primary" role="button">Cancel</a> -->
                                             <a t-attf-href="/marketplace/announcement/#{announcement.id}/draft_open" class="btn btn-primary" role="button">Publish</a>
                                         </t>
                                     </t>
                                     <t t-if="announcement.state == 'open'">
                                         <t t-if="announcement.is_user">
                                             <a t-att-href="'/marketplace/announcement_detail/%s/edit' % announcement.id" class="btn btn-primary" role="button">Edit</a>
-                                            <a t-attf-href="/marketplace/announcement/#{announcement.id}/open_cancel" class="btn btn-primary" role="button">Cancel</a>
+                                             <!-- <a t-attf-href="/marketplace/announcement/#{announcement.id}/open_cancel" class="btn btn-primary" role="button">Cancel</a>  -->
                                             <a t-attf-href="/marketplace/announcement/#{announcement.id}/open_done" class="btn btn-primary" role="button">Close</a>
                                         </t>
                                     </t>
@@ -148,9 +148,10 @@
             
                             <div class="col-md-4">
                                 <ul class="wizard pull-left mt0">
+                                    <h5>Announce status</h5>
                                     <li t-att-class="announcement.state == 'draft' and 'text-primary' or 'text-muted'">Draft<span class="chevron"></span></li>
                                     <li t-att-class="announcement.state == 'open' and 'text-primary' or 'text-muted'">Published<span class="chevron"></span></li>
-                                    <li t-att-class="announcement.state == 'done' and 'text-primary' or 'text-muted'">Close<span class="chevron"></span></li>
+                                    <li t-att-class="announcement.state == 'done' and 'text-primary' or 'text-muted'">Closed<span class="chevron"></span></li>
                                     <t t-if="announcement.state == 'cancel'">
                                         <li t-att-class="announcement.state == 'cancel' and 'text-primary' or 'text-muted'">Abort<span class="chevron"></span></li>
                                     </t>
